@@ -1,6 +1,6 @@
 function sheetsToFirestore() {
-   const email = "victor@suite-service-app-16b2d.iam.gserviceaccount.com";
-   const projectId = "suite-service-app-16b2d";
+   const email = "";
+   const projectId = "";
    const key = ""
    var firestore = FirestoreApp.getFirestore(email, key, projectId);
   
@@ -27,7 +27,7 @@ function sheetsToFirestore() {
        var stDate = new Date(dateSt);
        var stringfied = JSON.stringify(stDate);
        var updatedDt = stringfied.slice(1,11);
-
+      //get column value and add to firestore
        data.date = updatedDt;
        data.matricula = sourceData[i][0];
        data.nome = sourceData[i][1];
@@ -49,7 +49,7 @@ function sheetsToFirestore() {
        data.data_modificado = sourceData[i][17];
        data.usuario_modificado = sourceData[i][18];
     
-       firestore.createDocument("clientes-teste",data);
+       firestore.createDocument("clientes-teste",data); 
 
      }
     
